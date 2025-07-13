@@ -72,32 +72,32 @@ function UserCard(props) {
 					</button>
 				</div>
 				<div className='user-card__info-status'>
-					<div className='user-card__status-group user-card__info-status--tweets'>
-						<p className='user-card__status-group--title user-card__info-status--tweets__title'>
+					<article className='user-card__status-group user-card__info-status--tweets'>
+						<h3 className='user-card__status-group--title user-card__info-status--tweets__title'>
 							Tweets
-						</p>
+						</h3>
 						<p className='user-card__status-group--count user-card__info-status--tweets__count'>
 							{tweets}
 						</p>
-					</div>
+					</article>
 
-					<div className='user-card__status-group user-card__info-status--following'>
-						<p className='user-card__status-group--title user-card__info-status--following__title'>
+					<article className='user-card__status-group user-card__info-status--following'>
+						<h3 className='user-card__status-group--title user-card__info-status--following__title'>
 							Following
-						</p>
+						</h3>
 						<p className='user-card__status-group--count user-card__info-status--following__count'>
 							{following}
 						</p>
-					</div>
+					</article>
 
-					<div className='user-card__status-group user-card__info-status--followers'>
-						<p className='user-card__status-group--title user-card__info-status--followers__title'>
+					<article className='user-card__status-group user-card__info-status--followers'>
+						<h3 className='user-card__status-group--title user-card__info-status--followers__title'>
 							Followers
-						</p>
+						</h3>
 						<p className='user-card__status-group--count user-card__info-status--followers__count'>
 							{followers}
 						</p>
-					</div>
+					</article>
 				</div>
 			</div>
 		</article>
