@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-regular-svg-icons'
+import './userCard.css'
 
 function UserCard(props) {
 	const {
@@ -9,11 +10,11 @@ function UserCard(props) {
 		tweets,
 		following,
 		followers,
-		gender,
-	} = props
+		isGender,
+	} = props.user
 
 	const bgColorBtn = {
-		backgroundColor: gender ? '#a94064' : '#4169E1',
+		backgroundColor: isGender ? '#a94064' : '#4169E1',
 	}
 
 	function btnSubsribeAction() {
@@ -41,7 +42,7 @@ function UserCard(props) {
 	}
 
 	return (
-		<div className='user-card__container'>
+		<article className='user-card__container'>
 			<div className='user-card__info'>
 				<div className='user-card__info-img'>
 					<img
@@ -99,7 +100,7 @@ function UserCard(props) {
 					</div>
 				</div>
 			</div>
-		</div>
+		</article>
 	)
 }
 
