@@ -1,0 +1,115 @@
+.user-card__container {
+	padding: 1.875rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.user-card__info {
+	max-width: 300px;
+	min-width: 100px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 1px 2px 5px black;
+	position: relative;
+}
+
+.user-card__info-img {
+	display: inline-block;
+}
+
+.user-card__info-img--bg {
+	object-fit: cover;
+	object-position: center;
+	opacity: 95%;
+	height: 300px;
+	width: 100%;
+	position: relative;
+}
+
+.user-card__info-star {
+	position: absolute;
+	top: 0.625rem;
+	right: 0.625rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.user-card__info-star--icon--active {
+	color: #f1c40f;
+}
+
+.user-card__info-name {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	color: #fff;
+}
+
+.user-card__info-name--oficial {
+	font-size: 1.5625em;
+	font-weight: 700;
+}
+
+.user-card__info-name--nick {
+	font-size: 0.875em;
+	font-weight: 400;
+}
+
+.user-card__btn {
+	position: absolute;
+	display: inline-block;
+	top: 17.5rem;
+}
+
+.user-card__btn-subscribe {
+	padding: 0.625rem 0.9375rem;
+	border: 1px solid;
+	border-radius: 100%;
+	font-size: 1.25em;
+	cursor: pointer;
+	color: #fff;
+	transition: all 1.1s;
+}
+
+.user-card__btn-subscribe:hover {
+	transform: scale(1.2);
+}
+
+.user-card__info-status {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.25rem;
+	margin-top: 3.125rem;
+	margin-bottom: 3.125rem;
+}
+
+.user-card__status-group {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.user-card__status-group--title {
+	font-size: 0.875em;
+	font-weight: 400;
+}
+
+.user-card__status-group--count {
+	font-size: 1.125em;
+	font-weight: 600;
+}

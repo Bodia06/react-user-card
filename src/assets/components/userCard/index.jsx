@@ -1,0 +1,106 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-regular-svg-icons'
+
+function UserCard(props) {
+	const {
+		bgImage,
+		nameOficial,
+		nickName,
+		tweets,
+		following,
+		followers,
+		gender,
+	} = props
+
+	const bgColorBtn = {
+		backgroundColor: gender ? '#a94064' : '#4169E1',
+	}
+
+	function btnSubsribeAction() {
+		const followersCount = document.querySelector(
+			'.user-card__info-status--followers__count'
+		)
+		const currentFollowers = parseInt(followersCount.textContent)
+
+		const subscribeButton = document.querySelector('.user-card__btn-subscribe')
+		subscribeButton.classList.toggle('user-card__btn-subscribe--active')
+		if (
+			subscribeButton.classList.contains('user-card__btn-subscribe--active')
+		) {
+			subscribeButton.textContent = '✔'
+			followersCount.textContent = currentFollowers + 1
+		} else {
+			subscribeButton.textContent = '+'
+			followersCount.textContent = currentFollowers - 1
+		}
+	}
+
+	function starAction() {
+		const starIcon = document.querySelector('.user-card__info-star--icon')
+		starIcon.classList.toggle('user-card__info-star--icon--active')
+	}
+
+	return (
+		<div className='user-card__container'>
+			<div className='user-card__info'>
+				<div className='user-card__info-img'>
+					<img
+						className='user-card__info-img--bg'
+						src={bgImage}
+						alt={`${nameOficial} photo`}
+					/>
+				</div>
+				<div className='user-card__info-star'>
+					<FontAwesomeIcon
+						className='user-card__info-star--icon'
+						icon={faStar}
+						onClick={() => starAction()}
+					/>
+				</div>
+				<div className='user-card__info-name'>
+					<h2 className='user-card__info-name--oficial'>{nameOficial}</h2>
+					<h3 className='user-card__info-name--nick'>{`@${nickName}`}</h3>
+				</div>
+				<div className='user-card__btn'>
+					<button
+						className='user-card__btn-subscribe'
+						style={bgColorBtn}
+						onClick={() => btnSubsribeAction()}
+					>
+						+
+					</button>
+				</div>
+				<div className='user-card__info-status'>
+					<div className='user-card__status-group user-card__info-status--tweets'>
+						<p className='user-card__status-group--title user-card__info-status--tweets__title'>
+							Tweets
+						</p>
+						<p className='user-card__status-group--count user-card__info-status--tweets__count'>
+							{tweets}
+						</p>
+					</div>
+
+					<div className='user-card__status-group user-card__info-status--following'>
+						<p className='user-card__status-group--title user-card__info-status--following__title'>
+							Following
+						</p>
+						<p className='user-card__status-group--count user-card__info-status--following__count'>
+							{following}
+						</p>
+					</div>
+
+					<div className='user-card__status-group user-card__info-status--followers'>
+						<p className='user-card__status-group--title user-card__info-status--followers__title'>
+							Followers
+						</p>
+						<p className='user-card__status-group--count user-card__info-status--followers__count'>
+							{followers}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	)
+}
+
+export default UserCard
